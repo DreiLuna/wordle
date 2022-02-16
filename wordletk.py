@@ -40,21 +40,21 @@ l1_2 = Label(r1_2, text=let1_2, height = 5, width =  10, fg="black")
 l1_2.pack()
 
 r1_3 = Canvas(root, height = height, width = width)
-r1_3.place(x=col2, y=10)
+r1_3.place(x=col3, y=10)
 #letter
-l1_3 = Label(r1_2, text=let1_3, height = 5, width =  10, fg="black")
+l1_3 = Label(r1_3, text=let1_3, height = 5, width =  10, fg="black")
 l1_3.pack()
 
 r1_4 = Canvas(root, height = height, width = width)
-r1_4.place(x=col2, y=10)
+r1_4.place(x=col4, y=10)
 #letter
-l1_4 = Label(r1_2, text=let1_4, height = 5, width =  10, fg="black")
+l1_4 = Label(r1_4, text=let1_4, height = 5, width =  10, fg="black")
 l1_4.pack()
 
 r1_5 = Canvas(root, height = height, width = width)
-r1_5.place(x=col2, y=10)
+r1_5.place(x=col5, y=10)
 #letter
-l1_5 = Label(r1_2, text=let1_5, height = 5, width =  10, fg="black")
+l1_5 = Label(r1_5, text=let1_5, height = 5, width =  10, fg="black")
 l1_5.pack()
 
 
