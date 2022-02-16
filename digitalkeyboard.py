@@ -88,23 +88,24 @@ letx = Button(root, text="a", height=heightl, width=widthl, command = exx)
 lety = Button(root, text="a", height=heightl, width=widthl, command = exy)
 letz = Button(root, text="a", height=heightl, width=widthl, command = exz)
 
-spacing = (widthl*10) + 10
+xspacing = (widthl*10) + 10
+yspacing = (widthl*10) + 50
 
 xcol1 = 10
 yrow1 = 10
 
-xcol2 = xcol1 +spacing
-xcol3 = xcol2 +spacing
-xcol4 = xcol3 +spacing
-xcol5 = xcol4 +spacing
-xcol6 = xcol5 +spacing
-xcol7 = xcol6 +spacing
-xcol8 = xcol7 +spacing
-xcol9 = xcol8 +spacing
-xcol10 = xcol9 +spacing
+xcol2 = xcol1 +xspacing
+xcol3 = xcol2 +xspacing
+xcol4 = xcol3 +xspacing
+xcol5 = xcol4 +xspacing
+xcol6 = xcol5 +xspacing
+xcol7 = xcol6 +xspacing
+xcol8 = xcol7 +xspacing
+xcol9 = xcol8 +xspacing
+xcol10 = xcol9 +xspacing
 
-yrow2 = yrow1 + spacing
-yrow3 = yrow2 + spacing
+yrow2 = yrow1 + yspacing
+yrow3 = yrow2 + yspacing
 #r2
 leta.place(x=xcol1, y=yrow1)
 letb.place(x=xcol2, y=yrow1)
