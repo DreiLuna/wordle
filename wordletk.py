@@ -14,51 +14,52 @@ root.configure(bg="#535559")
 
 #!one file pogint
 
-def wguesse(letterpressed, collumcheck, changerow):
+def wguesse(letterpressed):
     if changerow == 0:
         #!row 1 
         if collumcheck == 1:
-            wr1_1 = letterpressed
+            let1_1 = letterpressed
             l1_1.configure(r1_1, text=let1_1, height = leth, width =  letw, fg="black")
         elif collumcheck == 2:
-            wr1_2 = letterpressed
+            let1_2 = letterpressed
         elif collumcheck == 3:
-            wr1_3 = letterpressed
+            let1_3 = letterpressed
         elif collumcheck == 4:
-            wr1_4 = letterpressed
+            let1_4 = letterpressed
         elif collumcheck == 5:
-            wr1_5 = letterpressed
+            let1_5 = letterpressed
+            '''
     #!row 2 
-    wr2_1
-    wr2_2
-    wr2_3
-    wr2_4
-    wr2_5
+    let2_1
+    let2_2
+    let2_3
+    let2_4
+    let2_5
     #!row 3 
-    wr3_1
-    wr3_2
-    wr3_3
-    wr3_4
-    wr3_5
+    let3_1
+    let3_2
+    let3_3
+    let3_4
+    let3_5
     #!row 4
-    wr4_1
-    wr4_2
-    wr4_3
-    wr4_4
-    wr4_5
+    let4_1
+    let4_2
+    let4_3
+    let4_4
+    let4_5
     #!row 5
-    wr5_1
-    wr5_2
-    wr5_3
-    wr5_4
-    wr5_5
+    let5_1
+    let5_2
+    let5_3
+    let5_4
+    let5_5
     #!row 6
-    wr6_1
-    wr6_2
-    wr6_3
-    wr6_4
-    wr6_5
-
+    let6_1
+    let6_2
+    let6_3
+    let6_4
+    let6_5
+'''
 #!-------------
 heightl = 5
 widthl = 5
@@ -73,6 +74,7 @@ def exa():
     collumcheck = int(collumcheck) + 1
     letterpressed = "a"
     wguesse(letterpressed)
+    print("work")
 def exb():
     letterpressed = "b"
 def exc():
