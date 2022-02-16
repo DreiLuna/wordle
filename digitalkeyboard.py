@@ -88,6 +88,10 @@ letx = Button(root, text="x", height=heightl, width=widthl, command = exx)
 lety = Button(root, text="y", height=heightl, width=widthl, command = exy)
 letz = Button(root, text="z", height=heightl, width=widthl, command = exz)
 
+extra1 = Button(root, text="z", height=heightl, width=widthl)
+extra2 = Button(root, text="z", height=heightl, width=widthl)
+extra3 = Button(root, text="z", height=heightl, width=widthl)
+
 xspacing = (widthl*10) + 10
 yspacing = (widthl*10) + 50
 
@@ -106,7 +110,10 @@ xcol10 = xcol9 +xspacing
 
 yrow2 = yrow1 + yspacing
 yrow3 = yrow2 + yspacing
-#r2
+
+offset1 = 25
+offset2 = 50
+#r1
 leta.place(x=xcol1, y=yrow1)
 letb.place(x=xcol2, y=yrow1)
 letc.place(x=xcol3, y=yrow1)
@@ -119,23 +126,24 @@ leti.place(x=xcol9, y=yrow1)
 letj.place(x=xcol10, y=yrow1)
 #r2
 
-letk.place(x=xcol1, y=yrow2)
-letl.place(x=xcol2, y=yrow2)
-letm.place(x=xcol3, y=yrow2)
-letn.place(x=xcol4, y=yrow2)
-leto.place(x=xcol5, y=yrow2)
-letp.place(x=xcol6, y=yrow2)
-letq.place(x=xcol7, y=yrow2)
-letr.place(x=xcol8, y=yrow2)
-leta.place(x=xcol9, y=yrow2)
+letk.place(x=xcol1+offset1, y=yrow2)
+letl.place(x=xcol2+offset1, y=yrow2)
+letm.place(x=xcol3+offset1, y=yrow2)
+letn.place(x=xcol4+offset1, y=yrow2)
+leto.place(x=xcol5+offset1, y=yrow2)
+letp.place(x=xcol6+offset1, y=yrow2)
+letq.place(x=xcol7+offset1, y=yrow2)
+letr.place(x=xcol8+offset1, y=yrow2)
+lets.place(x=xcol9+offset1, y=yrow2)
 
-lett.place(x=xcol1, y=yrow3)
-letu.place(x=xcol2, y=yrow3)
-letv.place(x=xcol3, y=yrow3)
-letw.place(x=xcol4, y=yrow3)
-letx.place(x=xcol5, y=yrow3)
-lety.place(x=xcol6, y=yrow3)
-letz.place(x=xcol7, y=yrow3)
+
+lett.place(x=xcol1+offset2, y=yrow3)
+letu.place(x=xcol2+offset2, y=yrow3)
+letv.place(x=xcol3+offset2, y=yrow3)
+letw.place(x=xcol4+offset2, y=yrow3)
+letx.place(x=xcol5+offset2, y=yrow3)
+lety.place(x=xcol6+offset2, y=yrow3)
+letz.place(x=xcol7+offset2, y=yrow3)
 
 
 root.mainloop()
