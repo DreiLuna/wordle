@@ -1,5 +1,5 @@
 from tkinter import *
-
+from enchant.checker import SpellChecker
 
 root= Tk()
 
@@ -18,16 +18,24 @@ def wguesse(letterpressed):
     if changerow == 0:
         #!row 1 
         if collumcheck == 1:
+            print("i got here")
+            global let1_1
             let1_1 = letterpressed
-            l1_1.configure(r1_1, text=let1_1, height = leth, width =  letw, fg="black")
+            print("igot past there")
+            l1_1.configure(text=let1_1)
+            print("i dont think so")
         elif collumcheck == 2:
             let1_2 = letterpressed
+            l1_2.configure(text=let1_2)
         elif collumcheck == 3:
             let1_3 = letterpressed
+            l1_3.configure(text=let1_3)
         elif collumcheck == 4:
             let1_4 = letterpressed
+            l1_4.configure(text=let1_4)
         elif collumcheck == 5:
             let1_5 = letterpressed
+            l1_5.configure(text=let1_5)
             '''
     #!row 2 
     let2_1
@@ -72,62 +80,154 @@ changerow = 0
 def exa():
     global collumcheck
     collumcheck = int(collumcheck) + 1
+    print(collumcheck)
     letterpressed = "a"
     wguesse(letterpressed)
     print("work")
 def exb():
+    global collumcheck
+    collumcheck = int(collumcheck) + 1
     letterpressed = "b"
+    wguesse(letterpressed)
 def exc():
+    global collumcheck
+    collumcheck = int(collumcheck) + 1
     letterpressed = "c"
+    wguesse(letterpressed)
 def exd():
+    global collumcheck
+    collumcheck = int(collumcheck) + 1
     letterpressed = "d"
+    wguesse(letterpressed)
 def exe():
+    global collumcheck
+    collumcheck = int(collumcheck) + 1
     letterpressed = "e"
+    wguesse(letterpressed)
 def exf():
+    global collumcheck
+    collumcheck = int(collumcheck) + 1
     letterpressed = "f"
+    wguesse(letterpressed)
 def exg():
+    global collumcheck
+    collumcheck = int(collumcheck) + 1
     letterpressed = "g"
+    wguesse(letterpressed)
 def exh():
+    global collumcheck
+    collumcheck = int(collumcheck) + 1
     letterpressed = "h"
+    wguesse(letterpressed)
 def exi():
+    global collumcheck
+    collumcheck = int(collumcheck) + 1
     letterpressed = "i"
+    wguesse(letterpressed)
 def exj():
+    global collumcheck
+    collumcheck = int(collumcheck) + 1
     letterpressed = "j"
+    wguesse(letterpressed)
 def exk():
+    global collumcheck
+    collumcheck = int(collumcheck) + 1
     letterpressed = "k"
+    wguesse(letterpressed)
 def exl():
+    global collumcheck
+    collumcheck = int(collumcheck) + 1
     letterpressed = "l"
+    wguesse(letterpressed)
 def exm():
+    global collumcheck
+    collumcheck = int(collumcheck) + 1
     letterpressed = "m"
+    wguesse(letterpressed)
 def exn():
+    global collumcheck
+    collumcheck = int(collumcheck) + 1
     letterpressed = "n"
+    wguesse(letterpressed)
 def exo():
+    global collumcheck
+    collumcheck = int(collumcheck) + 1
     letterpressed = "o"
+    wguesse(letterpressed)
 def exp():
+    global collumcheck
+    collumcheck = int(collumcheck) + 1
     letterpressed = "p"
+    wguesse(letterpressed)
 def exq():
+    global collumcheck
+    collumcheck = int(collumcheck) + 1
     letterpressed = "q"
+    wguesse(letterpressed)
 def exr():
+    global collumcheck
+    collumcheck = int(collumcheck) + 1
     letterpressed = "r"
+    wguesse(letterpressed)
 def exs():
+    global collumcheck
+    collumcheck = int(collumcheck) + 1
     letterpressed = "s"
+    wguesse(letterpressed)
 def ext():
+    global collumcheck
+    collumcheck = int(collumcheck) + 1
     letterpressed = "t"
+    wguesse(letterpressed)
 def exu():
+    global collumcheck
+    collumcheck = int(collumcheck) + 1
     letterpressed = "u"
+    wguesse(letterpressed)
 def exv():
+    global collumcheck
+    collumcheck = int(collumcheck) + 1
     letterpressed = "v"
+    wguesse(letterpressed)
 def exw():
+    global collumcheck
+    collumcheck = int(collumcheck) + 1
     letterpressed = "w"
+    wguesse(letterpressed)
 def exx():
+    global collumcheck
+    collumcheck = int(collumcheck) + 1
     letterpressed = "x"
+    wguesse(letterpressed)
 def exy():
+    global collumcheck
+    collumcheck = int(collumcheck) + 1
     letterpressed = "y"
+    wguesse(letterpressed)
 def exz():
+    global collumcheck
+    collumcheck = int(collumcheck) + 1
     letterpressed = "z"
+    wguesse(letterpressed)
 def ent():
+
+    #? Finish checking if word is correct - still need to make the word - mabey make a new function for that(most likely)
+    global checkword
+    checkword = 1
+    wguesse()
     global changerow
-    changerow = changerow + 1
+    chkr = SpellChecker("en_US")
+    chkr.set_text(my_word)
+    for err in chkr:
+        print("ERROR, not a proper word:", err.word)
+        error_checker = 1
+
+    if error_checker == 0:
+        changerow = changerow + 1
+
+
+    errorlable = Label(root, text=err.word + " is not a word. Please clear and try again.", )
+    errorlable.place(x= 500, y=10)
 
 #!buttons
 leta = Button(root, text="a", height=heightl, width=widthl, command = exa)
@@ -302,6 +402,7 @@ r1_5.place(x=col5, y=10)
 #letter
 l1_5 = Label(r1_5, text=let1_5, height = leth, width =  letw, fg="black")
 l1_5.pack()
+
 #!r2
 r2_1 = Canvas(root, height = height, width = width)
 r2_1.place(x=col1, y=row2)
@@ -336,121 +437,121 @@ l2_5.pack()
 r3_1 = Canvas(root, height = height, width = width)
 r3_1.place(x=col1, y=row3)
 #letter
-l1_1 = Label(r3_1, text=let3_1, height = leth, width =  letw, fg="black")
-l1_1.pack()
+l3_1 = Label(r3_1, text=let3_1, height = leth, width =  letw, fg="black")
+l3_1.pack()
 
 r3_2 = Canvas(root, height = height, width = width)
 r3_2.place(x=col2, y=row3)
 #letter
-l1_2 = Label(r3_2, text=let3_2, height = leth, width =  letw, fg="black")
-l1_2.pack()
+l3_2 = Label(r3_2, text=let3_2, height = leth, width =  letw, fg="black")
+l3_2.pack()
 
 r3_3 = Canvas(root, height = height, width = width)
 r3_3.place(x=col3, y=row3)
 #letter
-l1_3 = Label(r3_3, text=let3_3, height = leth, width =  letw, fg="black")
-l1_3.pack()
+l3_3 = Label(r3_3, text=let3_3, height = leth, width =  letw, fg="black")
+l3_3.pack()
 
 r3_4 = Canvas(root, height = height, width = width)
 r3_4.place(x=col4, y=row3)
 #letter
-l1_4 = Label(r3_4, text=let3_4, height = leth, width =  letw, fg="black")
-l1_4.pack()
+l3_4 = Label(r3_4, text=let3_4, height = leth, width =  letw, fg="black")
+l3_4.pack()
 
 r3_5 = Canvas(root, height = height, width = width)
 r3_5.place(x=col5, y=row3)
 #letter
-l1_5 = Label(r3_5, text=let3_5, height = leth, width =  letw, fg="black")
-l1_5.pack()
+l3_5 = Label(r3_5, text=let3_5, height = leth, width =  letw, fg="black")
+l3_5.pack()
 #!r4
 r4_1 = Canvas(root, height = height, width = width)
 r4_1.place(x=col1, y=row4)
 #letter
-l1_1 = Label(r4_1, text=let4_1, height = leth, width =  letw, fg="black")
-l1_1.pack()
+l4_1 = Label(r4_1, text=let4_1, height = leth, width =  letw, fg="black")
+l4_1.pack()
 
 r4_2 = Canvas(root, height = height, width = width)
 r4_2.place(x=col2, y=row4)
 #letter
-l1_2 = Label(r4_2, text=let4_2, height = leth, width =  letw, fg="black")
-l1_2.pack()
+l4_2 = Label(r4_2, text=let4_2, height = leth, width =  letw, fg="black")
+l4_2.pack()
 
 r4_3 = Canvas(root, height = height, width = width)
 r4_3.place(x=col3, y=row4)
 #letter
-l1_3 = Label(r4_3, text=let4_3, height = leth, width =  letw, fg="black")
-l1_3.pack()
+l4_3 = Label(r4_3, text=let4_3, height = leth, width =  letw, fg="black")
+l4_3.pack()
 
 r4_4 = Canvas(root, height = height, width = width)
 r4_4.place(x=col4, y=row4)
 #letter
-l1_4 = Label(r4_4, text=let4_4, height = leth, width =  letw, fg="black")
-l1_4.pack()
+l4_4 = Label(r4_4, text=let4_4, height = leth, width =  letw, fg="black")
+l4_4.pack()
 
 r4_5 = Canvas(root, height = height, width = width)
 r4_5.place(x=col5, y=row4)
 #letter
-l1_5 = Label(r4_5, text=let4_5, height = leth, width =  letw, fg="black")
-l1_5.pack()
+l4_5 = Label(r4_5, text=let4_5, height = leth, width =  letw, fg="black")
+l4_5.pack()
 #!5
 r5_1 = Canvas(root, height = height, width = width)
 r5_1.place(x=col1, y=row5)
 #letter
-l1_1 = Label(r5_1, text=let5_1, height = leth, width =  letw, fg="black")
-l1_1.pack()
+l5_1 = Label(r5_1, text=let5_1, height = leth, width =  letw, fg="black")
+l5_1.pack()
 
 r5_2 = Canvas(root, height = height, width = width)
 r5_2.place(x=col2, y=row5)
 #letter
-l1_2 = Label(r5_2, text=let5_2, height = leth, width =  letw, fg="black")
-l1_2.pack()
+l5_2 = Label(r5_2, text=let5_2, height = leth, width =  letw, fg="black")
+l5_2.pack()
 
 r5_3 = Canvas(root, height = height, width = width)
 r5_3.place(x=col3, y=row5)
 #letter
-l1_3 = Label(r5_3, text=let5_3, height = leth, width =  letw, fg="black")
-l1_3.pack()
+l5_3 = Label(r5_3, text=let5_3, height = leth, width =  letw, fg="black")
+l5_3.pack()
 
 r5_4 = Canvas(root, height = height, width = width)
 r5_4.place(x=col4, y=row5)
 #letter
-l1_4 = Label(r5_4, text=let5_4, height = leth, width =  letw, fg="black")
-l1_4.pack()
+l5_4 = Label(r5_4, text=let5_4, height = leth, width =  letw, fg="black")
+l5_4.pack()
 
 r5_5 = Canvas(root, height = height, width = width)
 r5_5.place(x=col5, y=row5)
 #letter
-l1_5 = Label(r5_5, text=let5_5, height = leth, width =  letw, fg="black")
-l1_5.pack()
+l5_5 = Label(r5_5, text=let5_5, height = leth, width =  letw, fg="black")
+l5_5.pack()
 #!r6
 r6_1 = Canvas(root, height = height, width = width)
 r6_1.place(x=col1, y=row6)
 #letter
-l1_1 = Label(r6_1, text=let6_1, height = leth, width =  letw, fg="black")
-l1_1.pack()
+l6_1 = Label(r6_1, text=let6_1, height = leth, width =  letw, fg="black")
+l6_1.pack()
 
 r6_2 = Canvas(root, height = height, width = width)
 r6_2.place(x=col2, y=row6)
 #letter
-l1_2 = Label(r6_2, text=let6_2, height = leth, width =  letw, fg="black")
-l1_2.pack()
+l6_2 = Label(r6_2, text=let6_2, height = leth, width =  letw, fg="black")
+l6_2.pack()
 
 r6_3 = Canvas(root, height = height, width = width)
 r6_3.place(x=col3, y=row6)
 #letter
-l1_3 = Label(r6_3, text=let6_3, height = leth, width =  letw, fg="black")
-l1_3.pack()
+l6_3 = Label(r6_3, text=let6_3, height = leth, width =  letw, fg="black")
+l6_3.pack()
 
 r6_4 = Canvas(root, height = height, width = width)
 r6_4.place(x=col4, y=row6)
 #letter
-l1_4 = Label(r6_4, text=let6_4, height = leth, width =  letw, fg="black")
-l1_4.pack()
+l6_4 = Label(r6_4, text=let6_4, height = leth, width =  letw, fg="black")
+l6_4.pack()
 
 r6_5 = Canvas(root, height = height, width = width)
 r6_5.place(x=col5, y=row6)
 #letter
-l1_5 = Label(r6_5, text=let6_5, height = leth, width =  letw, fg="black")
-l1_5.pack()
+l6_5 = Label(r6_5, text=let6_5, height = leth, width =  letw, fg="black")
+l6_5.pack()
 
 root.mainloop()
