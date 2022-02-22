@@ -73,6 +73,7 @@ def exa():
     global collumcheck
     collumcheck = int(collumcheck) + 1
     letterpressed = "a"
+    
     wguesse(letterpressed)
     print("work")
 def exb():
