@@ -7,8 +7,9 @@ root.geometry('1000x1000')
 
 root.configure(bg="#535559")
 #?vars
+my_word = "not the word"
 
-
+correct_word = "those"
 
 
 
@@ -25,18 +26,25 @@ def wguesse(letterpressed):
             l1_1.configure(text=let1_1)
             print("i dont think so")
         elif collumcheck == 2:
+            global let1_2
             let1_2 = letterpressed
             l1_2.configure(text=let1_2)
         elif collumcheck == 3:
+            global let1_3
             let1_3 = letterpressed
             l1_3.configure(text=let1_3)
         elif collumcheck == 4:
+            global let1_4
             let1_4 = letterpressed
             l1_4.configure(text=let1_4)
         elif collumcheck == 5:
+            global let1_5
             let1_5 = letterpressed
             l1_5.configure(text=let1_5)
-            '''
+        elif collumcheck == 6:
+            global my_word
+            my_word = str(let1_1) + str(let1_2) + str(let1_3) + str(let1_4) + str(let1_5)
+'''
     #!row 2 
     let2_1
     let2_2
@@ -214,20 +222,28 @@ def ent():
     #? Finish checking if word is correct - still need to make the word - mabey make a new function for that(most likely)
     global checkword
     checkword = 1
-    wguesse()
+    global collumcheck
+    collumcheck = 6
+    error_checker = 0
+    filler = " filler"
+    wguesse(filler)
     global changerow
     chkr = SpellChecker("en_US")
     chkr.set_text(my_word)
     for err in chkr:
         print("ERROR, not a proper word:", err.word)
         error_checker = 1
+        errorlable = Label(root, text=err.word + " is not a word. Please clear and try again.", )
+        errorlable.place(x= 500, y=10)
+
 
     if error_checker == 0:
         changerow = changerow + 1
+        print("your word is " + str(my_word))
+        errorlable = Label(root, text=my_word + " is your word", )
+        errorlable.place(x= 500, y=10)
 
 
-    errorlable = Label(root, text=err.word + " is not a word. Please clear and try again.", )
-    errorlable.place(x= 500, y=10)
 
 #!buttons
 leta = Button(root, text="a", height=heightl, width=widthl, command = exa)
@@ -282,36 +298,36 @@ yrow3 = yrow2 + yspacing
 offset1 = 25
 offset2 = 50
 #r1
-leta.place(x=xcol1, y=yrow1)
-letb.place(x=xcol2, y=yrow1)
-letc.place(x=xcol3, y=yrow1)
-letd.place(x=xcol4, y=yrow1)
-lete.place(x=xcol5, y=yrow1)
-letf.place(x=xcol6, y=yrow1)
-letg.place(x=xcol7, y=yrow1)
-leth.place(x=xcol8, y=yrow1)
-leti.place(x=xcol9, y=yrow1)
-letj.place(x=xcol10, y=yrow1)
+letq.place(x=xcol1, y=yrow1)
+letw.place(x=xcol2, y=yrow1)
+lete.place(x=xcol3, y=yrow1)
+letr.place(x=xcol4, y=yrow1)
+lett.place(x=xcol5, y=yrow1)
+lety.place(x=xcol6, y=yrow1)
+letu.place(x=xcol7, y=yrow1)
+leti.place(x=xcol8, y=yrow1)
+leto.place(x=xcol9, y=yrow1)
+letp.place(x=xcol10, y=yrow1)
 #r2
 
-letk.place(x=xcol1+offset1, y=yrow2)
-letl.place(x=xcol2+offset1, y=yrow2)
-letm.place(x=xcol3+offset1, y=yrow2)
-letn.place(x=xcol4+offset1, y=yrow2)
-leto.place(x=xcol5+offset1, y=yrow2)
-letp.place(x=xcol6+offset1, y=yrow2)
-letq.place(x=xcol7+offset1, y=yrow2)
-letr.place(x=xcol8+offset1, y=yrow2)
-lets.place(x=xcol9+offset1, y=yrow2)
+leta.place(x=xcol1+offset1, y=yrow2)
+lets.place(x=xcol2+offset1, y=yrow2)
+letd.place(x=xcol3+offset1, y=yrow2)
+letf.place(x=xcol4+offset1, y=yrow2)
+letg.place(x=xcol5+offset1, y=yrow2)
+leth.place(x=xcol6+offset1, y=yrow2)
+letj.place(x=xcol7+offset1, y=yrow2)
+letk.place(x=xcol8+offset1, y=yrow2)
+letl.place(x=xcol9+offset1, y=yrow2)
 
 #r3
-lett.place(x=xcol1+offset2, y=yrow3)
-letu.place(x=xcol2+offset2, y=yrow3)
-letv.place(x=xcol3+offset2, y=yrow3)
-letw.place(x=xcol4+offset2, y=yrow3)
-letx.place(x=xcol5+offset2, y=yrow3)
-lety.place(x=xcol6+offset2, y=yrow3)
-letz.place(x=xcol7+offset2, y=yrow3)
+letz.place(x=xcol1+offset2, y=yrow3)
+letx.place(x=xcol2+offset2, y=yrow3)
+letc.place(x=xcol3+offset2, y=yrow3)
+letv.place(x=xcol4+offset2, y=yrow3)
+letb.place(x=xcol5+offset2, y=yrow3)
+letn.place(x=xcol6+offset2, y=yrow3)
+letm.place(x=xcol7+offset2, y=yrow3)
 ent.place(x=xcol8+offset2, y=yrow3)
 
 
