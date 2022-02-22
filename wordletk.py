@@ -9,10 +9,22 @@ root.configure(bg="#535559")
 #?vars
 my_word = "not the word"
 
+
+
+
+#!IDK FIX IT FUTURE DREI
 correct_word = "those"
+letters_of_cor_word = list(correct_word)
+letters_of_cor_word1 = str(letters_of_cor_word)
+letocw = letters_of_cor_word1.strip("[]")
+l1232 = str(letocw)
+l2343 = l1232.strip(",")
+print (l2343)
+one, tow, three, four, five, *_ = l = l1232.split()
 
 
-
+for n in l:
+  print(n)
 #!one file pogint
 
 def wguesse(letterpressed):
@@ -44,6 +56,13 @@ def wguesse(letterpressed):
         elif collumcheck == 6:
             global my_word
             my_word = str(let1_1) + str(let1_2) + str(let1_3) + str(let1_4) + str(let1_5)
+        elif collumcheck == 7:
+            if let1_1 == "t":
+                r1_1.configure(bg = "#30ab51")
+                l1_1.configure(bg = "#30ab51")
+            elif let1_1 == letters_of_cor_word:
+                r1_1.configure(bg = "#ede96d")
+                l1_1.configure(bg = "#30ab51")
 '''
     #!row 2 
     let2_1
@@ -220,7 +239,6 @@ def exz():
     wguesse(letterpressed)
 def ent():
 
-    #? Finish checking if word is correct - still need to make the word - mabey make a new function for that(most likely)
     global checkword
     checkword = 1
     global collumcheck
@@ -239,10 +257,13 @@ def ent():
 
 
     if error_checker == 0:
+        collumcheck = 7 
+        wguesse(filler)
         changerow = changerow + 1
         print("your word is " + str(my_word))
         errorlable = Label(root, text=my_word + " is your word", )
         errorlable.place(x= 500, y=10)
+    
 
 
 
