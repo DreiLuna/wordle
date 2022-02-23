@@ -1,5 +1,7 @@
 from tkinter import *
-from enchant.checker import SpellChecker
+#from enchant.checker import SpellChecker
+from spellchecker import SpellChecker
+spell = SpellChecker()
 
 root= Tk()
 
@@ -17,16 +19,75 @@ correct_word = "those"
 letters_of_cor_word = list(correct_word)
 letters_of_cor_word1 = str(letters_of_cor_word)
 letocw = letters_of_cor_word1.strip("[]")
-l1232 = str(letocw)
-l2343 = l1232.strip(",")
-print (l2343)
-one, tow, three, four, five, *_ = l = l1232.split()
 
+one, two, three, four, five, *_ = l = letocw.split()
+
+#! hashtag wanna die but i made the letters variables POGGERS
+#?1
+one = one.replace(',', '')
+one = one.replace("'", "")
+print(one)
+wl1= str(one)
+#?2
+two = two.replace(',', '')
+two = two.replace("'", "")
+print(two)
+wl2= str(two)
+#?3
+
+three = three.replace(',', '')
+three = three.replace("'", "")
+print(three)
+wl3= str(three)
+
+#?4
+
+four = four.replace(',', '')
+four = four.replace("'", "")
+print(four)
+wl4= str(four)
+
+#?5
+
+five = five.replace(',', '')
+five = five.replace("'", "")
+print(five)
+wl5= str(five)
 
 for n in l:
-  print(n)
+    print(n)
+
+if one == "t":
+    print("it is t")
 #!one file pogint
 
+def color_check(flet1, flet2, flet3, flet4, flet5, flabl1, flabl2, flabl3, flabl4, flabl5):
+    print("got to the spot")
+    if flet1 == wl1:
+        flabl1.configure(bg = "#30ab51")
+    elif flet1 == wl2 or let1_1 == wl3 or let1_1 == wl4 or let1_1 == wl5:
+        flabl1.configure(bg = "#ede96d")
+
+    if flet2 == wl2:
+        flabl2.configure(bg = "#30ab51")
+    elif flet2 == wl1 or let1_2 == wl3 or let1_2 == wl4 or let1_2 == wl5:
+        flabl2.configure(bg = "#ede96d")
+
+    if flet3 == wl3:
+        flabl3.configure(bg = "#30ab51")
+    elif flet3 == wl1 or let1_3 == wl2 or let1_3 == wl4 or let1_3 == wl5:
+        flabl3.configure(bg = "#ede96d")
+
+    if flet4 == wl4:
+        flabl4.configure(bg = "#30ab51")
+    elif flet4 == wl1 or let1_4 == wl2 or let1_4 == wl3 or let1_4 == wl5:
+        flabl4.configure(bg = "#ede96d")
+
+    if flet5 == wl5:
+        flabl5.configure(bg = "#30ab51")
+    elif flet5 == wl1 or let1_5 == wl2 or let1_5 == wl3 or let1_5 == wl4:
+        flabl5.configure(bg = "#ede96d")
+    
 def wguesse(letterpressed):
     if changerow == 0:
         #!row 1 
@@ -57,44 +118,170 @@ def wguesse(letterpressed):
             global my_word
             my_word = str(let1_1) + str(let1_2) + str(let1_3) + str(let1_4) + str(let1_5)
         elif collumcheck == 7:
-            if let1_1 == "t":
-                r1_1.configure(bg = "#30ab51")
-                l1_1.configure(bg = "#30ab51")
-            elif let1_1 == letters_of_cor_word:
-                r1_1.configure(bg = "#ede96d")
-                l1_1.configure(bg = "#30ab51")
-'''
-    #!row 2 
-    let2_1
-    let2_2
-    let2_3
-    let2_4
-    let2_5
-    #!row 3 
-    let3_1
-    let3_2
-    let3_3
-    let3_4
-    let3_5
-    #!row 4
-    let4_1
-    let4_2
-    let4_3
-    let4_4
-    let4_5
-    #!row 5
-    let5_1
-    let5_2
-    let5_3
-    let5_4
-    let5_5
-    #!row 6
-    let6_1
-    let6_2
-    let6_3
-    let6_4
-    let6_5
-'''
+            color_check(let1_1, let1_2, let1_3, let1_4, let1_5, l1_1, l1_2, l1_3, l1_4, l1_5)
+        else:
+            print("we didnt do it")
+    elif changerow == 1:
+        #!row 2 
+        if collumcheck == 2:
+            print("i got here")
+            global let2_1
+            let2_1 = letterpressed
+            print("igot past there")
+            l2_1.configure(text=let2_1)
+            print("i dont think so")
+        elif collumcheck == 2:
+            global let2_2
+            let2_2 = letterpressed
+            l2_2.configure(text=let2_2)
+        elif collumcheck == 3:
+            global let2_3
+            let2_3 = letterpressed
+            l2_3.configure(text=let2_3)
+        elif collumcheck == 4:
+            global let2_4
+            let2_4 = letterpressed
+            l2_4.configure(text=let2_4)
+        elif collumcheck == 5:
+            global let2_5
+            let2_5 = letterpressed
+            l2_5.configure(text=let2_5)
+        elif collumcheck == 6:
+            
+            my_word = str(let2_1) + str(let2_2) + str(let2_3) + str(let2_4) + str(let2_5)
+        elif collumcheck == 7:
+            color_check(let2_1, let2_2, let2_3, let2_4, let2_5, l2_1, l2_2, l2_3, l2_4, l2_5)
+        else:
+            print("we didnt do it")
+    elif changerow == 2:
+        #!row 3 
+        if collumcheck == 3:
+            print("i got here")
+            global let3_1
+            let3_1 = letterpressed
+            print("igot past there")
+            l3_1.configure(text=let3_1)
+            print("i dont think so")
+        elif collumcheck == 2:
+            global let3_2
+            let3_2 = letterpressed
+            l3_2.configure(text=let3_2)
+        elif collumcheck == 3:
+            global let3_3
+            let3_3 = letterpressed
+            l3_3.configure(text=let3_3)
+        elif collumcheck == 4:
+            global let3_4
+            let3_4 = letterpressed
+            l3_4.configure(text=let3_4)
+        elif collumcheck == 5:
+            global let3_5
+            let3_5 = letterpressed
+            l3_5.configure(text=let3_5)
+        elif collumcheck == 6:
+            
+            my_word = str(let3_1) + str(let3_2) + str(let3_3) + str(let3_4) + str(let3_5)
+        elif collumcheck == 7:
+            color_check(let3_1, let3_2, let3_3, let3_4, let3_5, l3_1, l3_2, l3_3, l3_4, l3_5)
+        else:
+            print("we didnt do it")
+    elif changerow == 3:
+        #!row 4
+        if collumcheck == 4:
+            print("i got here")
+            global let4_1
+            let4_1 = letterpressed
+            print("igot past there")
+            l4_1.configure(text=let4_1)
+            print("i dont think so")
+        elif collumcheck == 2:
+            global let4_2
+            let4_2 = letterpressed
+            l4_2.configure(text=let4_2)
+        elif collumcheck == 3:
+            global let4_3
+            let4_3 = letterpressed
+            l4_3.configure(text=let4_3)
+        elif collumcheck == 4:
+            global let4_4
+            let4_4 = letterpressed
+            l4_4.configure(text=let4_4)
+        elif collumcheck == 5:
+            global let4_5
+            let4_5 = letterpressed
+            l4_5.configure(text=let4_5)
+        elif collumcheck == 6:
+            
+            my_word = str(let4_1) + str(let4_2) + str(let4_3) + str(let4_4) + str(let4_5)
+        elif collumcheck == 7:
+            color_check(let4_1, let4_2, let4_3, let4_4, let4_5, l4_1, l4_2, l4_3, l4_4, l4_5)
+        else:
+            print("we didnt do it")
+    elif changerow == 4:
+        #!row 5
+        if collumcheck == 5:
+            print("i got here")
+            global let5_1
+            let5_1 = letterpressed
+            print("igot past there")
+            l5_1.configure(text=let5_1)
+            print("i dont think so")
+        elif collumcheck == 2:
+            global let5_2
+            let5_2 = letterpressed
+            l5_2.configure(text=let5_2)
+        elif collumcheck == 3:
+            global let5_3
+            let5_3 = letterpressed
+            l5_3.configure(text=let5_3)
+        elif collumcheck == 4:
+            global let5_4
+            let5_4 = letterpressed
+            l5_4.configure(text=let5_4)
+        elif collumcheck == 5:
+            global let5_5
+            let5_5 = letterpressed
+            l5_5.configure(text=let5_5)
+        elif collumcheck == 6:
+            
+            my_word = str(let5_1) + str(let5_2) + str(let5_3) + str(let5_4) + str(let5_5)
+        elif collumcheck == 7:
+            color_check(let5_1, let5_2, let5_3, let5_4, let5_5, l5_1, l5_2, l5_3, l5_4, l5_5)
+        else:
+            print("we didnt do it")
+    elif changerow == 5:
+        #!row 6
+        if collumcheck == 6:
+            print("i got here")
+            global let6_1
+            let6_1 = letterpressed
+            print("igot past there")
+            l6_1.configure(text=let6_1)
+            print("i dont think so")
+        elif collumcheck == 2:
+            global let6_2
+            let6_2 = letterpressed
+            l6_2.configure(text=let6_2)
+        elif collumcheck == 3:
+            global let6_3
+            let6_3 = letterpressed
+            l6_3.configure(text=let6_3)
+        elif collumcheck == 4:
+            global let6_4
+            let6_4 = letterpressed
+            l6_4.configure(text=let6_4)
+        elif collumcheck == 5:
+            global let6_5
+            let6_5 = letterpressed
+            l6_5.configure(text=let6_5)
+        elif collumcheck == 6:
+            
+            my_word = str(let6_1) + str(let6_2) + str(let6_3) + str(let6_4) + str(let6_5)
+        elif collumcheck == 7:
+            color_check(let6_1, let6_2, let6_3, let6_4, let6_5, l6_1, l6_2, l6_3, l6_4, l6_5)
+        else:
+            print("we didnt do it")
+
 #!-------------
 heightl = 5
 widthl = 5
@@ -247,8 +434,25 @@ def ent():
     filler = " filler"
     wguesse(filler)
     global changerow
+    '''
     chkr = SpellChecker("en_US")
     chkr.set_text(my_word)
+'''
+    if my_word == spell.correction(my_word):
+        errorlable = Label(root, text=my_word + " is not a word. Please clear and try again.", )
+        errorlable.place(x= 500, y=10)
+    else:
+        collumcheck = 7 
+        print(changerow)
+        print(collumcheck)
+        wguesse(filler)
+        
+        print("your word is " + str(my_word))
+        errorlable = Label(root, text=my_word + " is your word", )
+        errorlable.place(x= 500, y=10)
+        changerow = changerow + 1
+        print (changerow)
+    '''
     for err in chkr:
         print("ERROR, not a proper word:", err.word)
         error_checker = 1
@@ -258,12 +462,16 @@ def ent():
 
     if error_checker == 0:
         collumcheck = 7 
+        print(changerow)
+        print(collumcheck)
         wguesse(filler)
-        changerow = changerow + 1
+        
         print("your word is " + str(my_word))
         errorlable = Label(root, text=my_word + " is your word", )
         errorlable.place(x= 500, y=10)
-    
+        changerow = changerow + 1
+        print (changerow)
+    '''
 
 
 
