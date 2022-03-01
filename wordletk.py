@@ -1,6 +1,13 @@
 from tkinter import *
 import enchant
 from spellchecker import SpellChecker
+from random_word import RandomWords
+
+#?pip install random-word
+
+r.get_random_word(minLength=5, maxLength=5)
+
+
 
 d = enchant.Dict("en_US")
 
