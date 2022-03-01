@@ -4,9 +4,10 @@ from spellchecker import SpellChecker
 from random_word import RandomWords
 
 #?pip install random-word
+r = RandomWords()
 
-r.get_random_word(minLength=5, maxLength=5)
-
+correct_word = r.get_random_word(minLength=5, maxLength=5)
+print(correct_word)
 
 
 d = enchant.Dict("en_US")
@@ -30,8 +31,7 @@ def open_win():
     Label(new, text = "You Won!", font = ("arial", 25)).pack(pady=30)
     new
 
-#!IDK FIX IT FUTURE DREI
-correct_word = "those"
+
 letters_of_cor_word = list(correct_word)
 letters_of_cor_word1 = str(letters_of_cor_word)
 letocw = letters_of_cor_word1.strip("[]")
@@ -466,6 +466,13 @@ def exz():
         collumcheck = int(collumcheck) + 1
     letterpressed = "z"
     wguesse(letterpressed)
+
+def spcheck(my_word):
+    print(my_word)
+    global my_word_check
+    my_word_check = d.check(my_word)
+    print(my_word_check)
+
 def ent():
 
     global checkword
@@ -479,9 +486,8 @@ def ent():
     '''
     chkr = SpellChecker("en_US")
     chkr.set_text(my_word)
-'''
-    my_word_check = d.check(my_word)
-
+    '''
+    spcheck(my_word)
     if my_word_check:
         collumcheck = 7 
         print(changerow)
@@ -496,10 +502,66 @@ def ent():
         changerow = changerow + 1
         print (changerow)
         collumcheck = 0
-
     else:
         errorlable = Label(root, text=my_word + " is not a word. Please clear and try again.", )
         errorlable.place(x= 500, y=10)
+        if changerow == 1:
+            global let1_1
+            global let1_2
+            global let1_3
+            global let1_4
+            global let1_5
+            let1_1 = " "
+            let1_2 = " "
+            let1_3 = " "
+            let1_4 = " "
+            let1_5 = " "
+        elif changerow == 2:
+            global let2_1
+            global let2_2
+            global let2_3
+            global let2_4
+            global let2_5
+            let2_1 = " "
+            let2_2 = " "
+            let2_3 = " "
+            let2_4 = " "
+            let2_5 = " "
+        elif changerow == 3:
+            global let3_1
+            global let3_2
+            global let3_3
+            global let3_4
+            global let3_5
+            let3_1 = " "
+            let3_2 = " "
+            let3_3 = " "
+            let3_4 = " "
+            let3_5 = " "
+        elif changerow == 4:
+            global let1_1
+            global let1_2
+            global let1_3
+            global let1_4
+            global let1_5
+            let4_1 = " "
+            let4_2 = " "
+            let4_3 = " "
+            let4_4 = " "
+            let4_5 = " "
+        elif changerow == 5:
+            let5_1 = " "
+            let5_2 = " "
+            let5_3 = " "
+            let5_4 = " "
+            let5_5 = " "
+        elif changerow == 6:
+            let6_1 = " "
+            let6_2 = " "
+            let6_3 = " "
+            let6_4 = " "
+            let6_5 = " "
+
 
     '''
     for err in chkr:
