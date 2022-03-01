@@ -1,6 +1,9 @@
 from tkinter import *
-#from enchant.checker import SpellChecker
+import enchant
 from spellchecker import SpellChecker
+
+d = enchant.Dict("en_US")
+
 spell = SpellChecker()
 
 root= Tk()
@@ -13,6 +16,12 @@ my_word = "not the word"
 
 
 
+def open_win():
+    new = Toplevel(root)
+    new.geometry('500x200')
+    new.title("You Won!")
+    Label(new, text = "You Won!", font = ("arial", 25)).pack(pady=30)
+    new
 
 #!IDK FIX IT FUTURE DREI
 correct_word = "those"
@@ -123,7 +132,7 @@ def wguesse(letterpressed):
             print("we didnt do it")
     elif changerow == 1:
         #!row 2 
-        if collumcheck == 2:
+        if collumcheck == 1:
             print("i got here")
             global let2_1
             let2_1 = letterpressed
@@ -155,7 +164,7 @@ def wguesse(letterpressed):
             print("we didnt do it")
     elif changerow == 2:
         #!row 3 
-        if collumcheck == 3:
+        if collumcheck == 1:
             print("i got here")
             global let3_1
             let3_1 = letterpressed
@@ -185,9 +194,9 @@ def wguesse(letterpressed):
             color_check(let3_1, let3_2, let3_3, let3_4, let3_5, l3_1, l3_2, l3_3, l3_4, l3_5)
         else:
             print("we didnt do it")
-    elif changerow == 3:
+
         #!row 4
-        if collumcheck == 4:
+        if collumcheck == 1:
             print("i got here")
             global let4_1
             let4_1 = letterpressed
@@ -217,9 +226,9 @@ def wguesse(letterpressed):
             color_check(let4_1, let4_2, let4_3, let4_4, let4_5, l4_1, l4_2, l4_3, l4_4, l4_5)
         else:
             print("we didnt do it")
-    elif changerow == 4:
+
         #!row 5
-        if collumcheck == 5:
+        if collumcheck == 1:
             print("i got here")
             global let5_1
             let5_1 = letterpressed
@@ -249,9 +258,9 @@ def wguesse(letterpressed):
             color_check(let5_1, let5_2, let5_3, let5_4, let5_5, l5_1, l5_2, l5_3, l5_4, l5_5)
         else:
             print("we didnt do it")
-    elif changerow == 5:
+
         #!row 6
-        if collumcheck == 6:
+        if collumcheck == 1:
             print("i got here")
             global let6_1
             let6_1 = letterpressed
@@ -293,7 +302,8 @@ global changerow
 changerow = 0
 def exa():
     global collumcheck
-    collumcheck = int(collumcheck) + 1
+    if collumcheck <= 5:
+        collumcheck = int(collumcheck) + 1
     print(collumcheck)
     letterpressed = "a"
     
@@ -301,127 +311,152 @@ def exa():
     print("work")
 def exb():
     global collumcheck
-    collumcheck = int(collumcheck) + 1
+    if collumcheck <= 5:
+        collumcheck = int(collumcheck) + 11
     letterpressed = "b"
     wguesse(letterpressed)
 def exc():
     global collumcheck
-    collumcheck = int(collumcheck) + 1
+    if collumcheck <= 5:
+        collumcheck = int(collumcheck) + 1
     letterpressed = "c"
     wguesse(letterpressed)
 def exd():
     global collumcheck
-    collumcheck = int(collumcheck) + 1
+    if collumcheck <= 5:
+        collumcheck = int(collumcheck) + 1
     letterpressed = "d"
     wguesse(letterpressed)
 def exe():
     global collumcheck
-    collumcheck = int(collumcheck) + 1
+    if collumcheck <= 5:
+        collumcheck = int(collumcheck) + 1
     letterpressed = "e"
     wguesse(letterpressed)
 def exf():
     global collumcheck
-    collumcheck = int(collumcheck) + 1
+    if collumcheck <= 5:
+        collumcheck = int(collumcheck) + 1
     letterpressed = "f"
     wguesse(letterpressed)
 def exg():
     global collumcheck
-    collumcheck = int(collumcheck) + 1
+    if collumcheck <= 5:
+        collumcheck = int(collumcheck) + 1
     letterpressed = "g"
     wguesse(letterpressed)
 def exh():
     global collumcheck
-    collumcheck = int(collumcheck) + 1
+    if collumcheck <= 5:
+        collumcheck = int(collumcheck) + 1
     letterpressed = "h"
     wguesse(letterpressed)
 def exi():
     global collumcheck
-    collumcheck = int(collumcheck) + 1
+    if collumcheck <= 5:
+        collumcheck = int(collumcheck) + 1
     letterpressed = "i"
     wguesse(letterpressed)
 def exj():
     global collumcheck
-    collumcheck = int(collumcheck) + 1
+    if collumcheck <= 5:
+        collumcheck = int(collumcheck) + 1
     letterpressed = "j"
     wguesse(letterpressed)
 def exk():
     global collumcheck
-    collumcheck = int(collumcheck) + 1
+    if collumcheck <= 5:
+        collumcheck = int(collumcheck) + 1
     letterpressed = "k"
     wguesse(letterpressed)
 def exl():
     global collumcheck
-    collumcheck = int(collumcheck) + 1
+    if collumcheck <= 5:
+        collumcheck = int(collumcheck) + 1
     letterpressed = "l"
     wguesse(letterpressed)
 def exm():
     global collumcheck
-    collumcheck = int(collumcheck) + 1
+    if collumcheck <= 5:
+        collumcheck = int(collumcheck) + 1
     letterpressed = "m"
     wguesse(letterpressed)
 def exn():
     global collumcheck
-    collumcheck = int(collumcheck) + 1
+    if collumcheck <= 5:
+        collumcheck = int(collumcheck) + 1
     letterpressed = "n"
     wguesse(letterpressed)
 def exo():
     global collumcheck
-    collumcheck = int(collumcheck) + 1
+    if collumcheck <= 5:
+        collumcheck = int(collumcheck) + 1
     letterpressed = "o"
     wguesse(letterpressed)
 def exp():
     global collumcheck
-    collumcheck = int(collumcheck) + 1
+    if collumcheck <= 5:
+        collumcheck = int(collumcheck) + 1
     letterpressed = "p"
     wguesse(letterpressed)
 def exq():
     global collumcheck
-    collumcheck = int(collumcheck) + 1
+    if collumcheck <= 5:
+        collumcheck = int(collumcheck) + 1
     letterpressed = "q"
     wguesse(letterpressed)
 def exr():
     global collumcheck
-    collumcheck = int(collumcheck) + 1
+    if collumcheck <= 5:
+        collumcheck = int(collumcheck) + 1
     letterpressed = "r"
     wguesse(letterpressed)
 def exs():
     global collumcheck
-    collumcheck = int(collumcheck) + 1
+    if collumcheck <= 5:
+        collumcheck = int(collumcheck) + 1
     letterpressed = "s"
     wguesse(letterpressed)
 def ext():
     global collumcheck
-    collumcheck = int(collumcheck) + 1
+    if collumcheck <= 5:
+        collumcheck = int(collumcheck) + 1
     letterpressed = "t"
     wguesse(letterpressed)
 def exu():
     global collumcheck
-    collumcheck = int(collumcheck) + 1
+    if collumcheck <= 5:
+        collumcheck = int(collumcheck) + 1
     letterpressed = "u"
     wguesse(letterpressed)
 def exv():
     global collumcheck
-    collumcheck = int(collumcheck) + 1
+    if collumcheck <= 5:
+        collumcheck = int(collumcheck) + 1
     letterpressed = "v"
     wguesse(letterpressed)
 def exw():
     global collumcheck
-    collumcheck = int(collumcheck) + 1
+    if collumcheck <= 5:
+        collumcheck = int(collumcheck) + 1
     letterpressed = "w"
     wguesse(letterpressed)
 def exx():
     global collumcheck
-    collumcheck = int(collumcheck) + 1
+    if collumcheck <= 5:
+        collumcheck = int(collumcheck) + 1
     letterpressed = "x"
     wguesse(letterpressed)
 def exy():
     global collumcheck
-    collumcheck = int(collumcheck) + 1
+    if collumcheck <= 5:
+        collumcheck = int(collumcheck) + 1
     letterpressed = "y"
     wguesse(letterpressed)
 def exz():
     global collumcheck
-    collumcheck = int(collumcheck) + 1
+    if collumcheck <= 5:
+        collumcheck = int(collumcheck) + 1
     letterpressed = "z"
     wguesse(letterpressed)
 def ent():
@@ -438,10 +473,9 @@ def ent():
     chkr = SpellChecker("en_US")
     chkr.set_text(my_word)
 '''
-    if my_word == spell.correction(my_word):
-        errorlable = Label(root, text=my_word + " is not a word. Please clear and try again.", )
-        errorlable.place(x= 500, y=10)
-    else:
+    my_word_check = d.check(my_word)
+
+    if my_word_check:
         collumcheck = 7 
         print(changerow)
         print(collumcheck)
@@ -450,8 +484,16 @@ def ent():
         print("your word is " + str(my_word))
         errorlable = Label(root, text=my_word + " is your word", )
         errorlable.place(x= 500, y=10)
+        if my_word == correct_word:
+            open_win()
         changerow = changerow + 1
         print (changerow)
+        collumcheck = 0
+
+    else:
+        errorlable = Label(root, text=my_word + " is not a word. Please clear and try again.", )
+        errorlable.place(x= 500, y=10)
+
     '''
     for err in chkr:
         print("ERROR, not a proper word:", err.word)
@@ -473,7 +515,12 @@ def ent():
         print (changerow)
     '''
 
-
+def delete():
+    print("del")
+    global collumcheck
+    letterpressed = ""
+    wguesse(letterpressed)
+    collumcheck = collumcheck -1
 
 #!buttons
 leta = Button(root, text="a", height=heightl, width=widthl, command = exa)
@@ -503,6 +550,7 @@ letx = Button(root, text="x", height=heightl, width=widthl, command = exx)
 lety = Button(root, text="y", height=heightl, width=widthl, command = exy)
 letz = Button(root, text="z", height=heightl, width=widthl, command = exz)
 
+delete = Button(root, text="Backspace", height=heightl, width=12, command = delete)
 ent = Button(root, text="enter", height=heightl, width=12, command = ent)
 
 
@@ -521,6 +569,7 @@ xcol7 = xcol6 +xspacing
 xcol8 = xcol7 +xspacing
 xcol9 = xcol8 +xspacing
 xcol10 = xcol9 +xspacing
+xcol11 = xcol10 +xspacing
 
 yrow2 = yrow1 + yspacing
 yrow3 = yrow2 + yspacing
@@ -559,6 +608,7 @@ letb.place(x=xcol5+offset2, y=yrow3)
 letn.place(x=xcol6+offset2, y=yrow3)
 letm.place(x=xcol7+offset2, y=yrow3)
 ent.place(x=xcol8+offset2, y=yrow3)
+delete.place(x=xcol11, y=yrow1)
 
 
 #?vars for squares
