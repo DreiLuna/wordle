@@ -4,13 +4,44 @@ from spellchecker import SpellChecker
 from random_word import RandomWords
 
 #?pip install random-word
+#?pip install pyyaml
 r = RandomWords()
-
-correct_word = r.get_random_word(minLength=5, maxLength=5)
-print(correct_word)
-
-
 d = enchant.Dict("en_US")
+
+
+
+def choose_word():
+    global correct_word
+    correct_word = r.get_random_word(minLength=5, maxLength=5)
+    print(correct_word)
+
+
+
+def check_correct_word():
+    global correct_word_scheck
+    correct_word_scheck = d.check(correct_word)
+    print(correct_word_scheck)
+
+choose_word()
+
+check_correct_word()
+
+if correct_word_scheck:
+    easy_check = False
+else:
+    easy_check = True
+
+while easy_check:
+    choose_word()
+    check_correct_word()
+    if check_correct_word:
+        easy_check = False
+    else:
+        easy_check = True
+
+
+
+
 
 spell = SpellChecker()
 
@@ -70,11 +101,9 @@ five = five.replace("'", "")
 print(five)
 wl5= str(five)
 
-for n in l:
-    print(n)
 
-if one == "t":
-    print("it is t")
+
+
 #!one file pogint
 
 def color_check(flet1, flet2, flet3, flet4, flet5, flabl1, flabl2, flabl3, flabl4, flabl5):
@@ -108,12 +137,9 @@ def wguesse(letterpressed):
     if changerow == 0:
         #!row 1 
         if collumcheck == 1:
-            print("i got here")
             global let1_1
             let1_1 = letterpressed
-            print("igot past there")
             l1_1.configure(text=let1_1)
-            print("i dont think so")
         elif collumcheck == 2:
             global let1_2
             let1_2 = letterpressed
@@ -135,17 +161,17 @@ def wguesse(letterpressed):
             my_word = str(let1_1) + str(let1_2) + str(let1_3) + str(let1_4) + str(let1_5)
         elif collumcheck == 7:
             color_check(let1_1, let1_2, let1_3, let1_4, let1_5, l1_1, l1_2, l1_3, l1_4, l1_5)
-        else:
-            print("we didnt do it")
+
+
     elif changerow == 1:
         #!row 2 
         if collumcheck == 1:
-            print("i got here")
+
             global let2_1
             let2_1 = letterpressed
-            print("igot past there")
+
             l2_1.configure(text=let2_1)
-            print("i dont think so")
+
         elif collumcheck == 2:
             global let2_2
             let2_2 = letterpressed
@@ -167,17 +193,17 @@ def wguesse(letterpressed):
             my_word = str(let2_1) + str(let2_2) + str(let2_3) + str(let2_4) + str(let2_5)
         elif collumcheck == 7:
             color_check(let2_1, let2_2, let2_3, let2_4, let2_5, l2_1, l2_2, l2_3, l2_4, l2_5)
-        else:
-            print("we didnt do it")
+
+
     elif changerow == 2:
         #!row 3 
         if collumcheck == 1:
-            print("i got here")
+
             global let3_1
             let3_1 = letterpressed
-            print("igot past there")
+
             l3_1.configure(text=let3_1)
-            print("i dont think so")
+
         elif collumcheck == 2:
             global let3_2
             let3_2 = letterpressed
@@ -199,17 +225,18 @@ def wguesse(letterpressed):
             my_word = str(let3_1) + str(let3_2) + str(let3_3) + str(let3_4) + str(let3_5)
         elif collumcheck == 7:
             color_check(let3_1, let3_2, let3_3, let3_4, let3_5, l3_1, l3_2, l3_3, l3_4, l3_5)
-        else:
-            print("we didnt do it")
+
+
 
         #!row 4
+    elif changerow == 3:
         if collumcheck == 1:
-            print("i got here")
+
             global let4_1
             let4_1 = letterpressed
-            print("igot past there")
+
             l4_1.configure(text=let4_1)
-            print("i dont think so")
+
         elif collumcheck == 2:
             global let4_2
             let4_2 = letterpressed
@@ -231,17 +258,18 @@ def wguesse(letterpressed):
             my_word = str(let4_1) + str(let4_2) + str(let4_3) + str(let4_4) + str(let4_5)
         elif collumcheck == 7:
             color_check(let4_1, let4_2, let4_3, let4_4, let4_5, l4_1, l4_2, l4_3, l4_4, l4_5)
-        else:
-            print("we didnt do it")
+
+
 
         #!row 5
+    elif changerow == 4:
         if collumcheck == 1:
-            print("i got here")
+
             global let5_1
             let5_1 = letterpressed
-            print("igot past there")
+
             l5_1.configure(text=let5_1)
-            print("i dont think so")
+
         elif collumcheck == 2:
             global let5_2
             let5_2 = letterpressed
@@ -263,17 +291,18 @@ def wguesse(letterpressed):
             my_word = str(let5_1) + str(let5_2) + str(let5_3) + str(let5_4) + str(let5_5)
         elif collumcheck == 7:
             color_check(let5_1, let5_2, let5_3, let5_4, let5_5, l5_1, l5_2, l5_3, l5_4, l5_5)
-        else:
-            print("we didnt do it")
+
+
 
         #!row 6
+    elif changerow == 5:
         if collumcheck == 1:
-            print("i got here")
+
             global let6_1
             let6_1 = letterpressed
-            print("igot past there")
+
             l6_1.configure(text=let6_1)
-            print("i dont think so")
+
         elif collumcheck == 2:
             global let6_2
             let6_2 = letterpressed
@@ -295,8 +324,8 @@ def wguesse(letterpressed):
             my_word = str(let6_1) + str(let6_2) + str(let6_3) + str(let6_4) + str(let6_5)
         elif collumcheck == 7:
             color_check(let6_1, let6_2, let6_3, let6_4, let6_5, l6_1, l6_2, l6_3, l6_4, l6_5)
-        else:
-            print("we didnt do it")
+
+
 
 #!-------------
 heightl = 5
@@ -505,6 +534,7 @@ def ent():
     else:
         errorlable = Label(root, text=my_word + " is not a word. Please clear and try again.", )
         errorlable.place(x= 500, y=10)
+        '''
         if changerow == 1:
             global let1_1
             global let1_2
@@ -516,6 +546,7 @@ def ent():
             let1_3 = " "
             let1_4 = " "
             let1_5 = " "
+            collumcheck = 0
         elif changerow == 2:
             global let2_1
             global let2_2
@@ -527,6 +558,7 @@ def ent():
             let2_3 = " "
             let2_4 = " "
             let2_5 = " "
+            collumcheck = 0
         elif changerow == 3:
             global let3_1
             global let3_2
@@ -538,30 +570,44 @@ def ent():
             let3_3 = " "
             let3_4 = " "
             let3_5 = " "
+            collumcheck = 0
         elif changerow == 4:
-            global let1_1
-            global let1_2
-            global let1_3
-            global let1_4
-            global let1_5
+            global let4_1
+            global let4_2
+            global let4_3
+            global let4_4
+            global let4_5
             let4_1 = " "
             let4_2 = " "
             let4_3 = " "
             let4_4 = " "
             let4_5 = " "
+            collumcheck = 0
         elif changerow == 5:
+            global let5_1
+            global let5_2
+            global let5_3
+            global let5_4
+            global let5_5
             let5_1 = " "
             let5_2 = " "
             let5_3 = " "
             let5_4 = " "
             let5_5 = " "
+            collumcheck = 0
         elif changerow == 6:
+            global let6_1
+            global let6_2
+            global let6_3
+            global let6_4
+            global let6_5
             let6_1 = " "
             let6_2 = " "
             let6_3 = " "
             let6_4 = " "
             let6_5 = " "
-
+            collumcheck = 0
+            '''
 
     '''
     for err in chkr:
