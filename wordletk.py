@@ -1,10 +1,12 @@
 from tkinter import *
 import enchant
-from spellchecker import SpellChecker
 from random_word import RandomWords
 
+#?pip install tk
 #?pip install random-word
+#?pip install pyenchant
 #?pip install pyyaml
+
 r = RandomWords()
 d = enchant.Dict("en_US")
 
@@ -43,7 +45,7 @@ while easy_check:
 
 
 
-spell = SpellChecker()
+
 
 root= Tk()
 
