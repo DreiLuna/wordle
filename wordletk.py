@@ -964,4 +964,81 @@ r6_5.place(x=col5, y=row6)
 l6_5 = Label(r6_5, text=let6_5, height = leth, width =  letw, fg="black")
 l6_5.pack()
 
+
+
+
+
+#! frigin entrys
+
+def butset():
+    button_word = wentry.get()
+    print(button_word)
+    countl = len(button_word)
+    print(countl)
+
+    let_button_word = list(button_word)
+    let_button_word1 = str(let_button_word)
+    let_but_word1 = let_button_word1.strip("[]")
+    one1, two2, three3, four4, five5, *_ = l = let_but_word1.split()
+
+    #! hashtag wanna die but i made the letters variables POGGERS
+    #?1
+    one1 = one1.replace(',', '')
+    one1 = one1.replace("'", "")
+    print(one1)
+    wl1= str(one1)
+    #?2
+    two2 = two2.replace(',', '')
+    two2 = two2.replace("'", "")
+    print(two2)
+    wl2= str(two2)
+    #?3
+
+    three3 = three3.replace(',', '')
+    three3 = three3.replace("'", "")
+    print(three3)
+    wl3= str(three3)
+
+    #?4
+
+    four4 = four4.replace(',', '')
+    four4 = four4.replace("'", "")
+    print(four4)
+    wl4= str(four4)
+
+    #?5
+
+    five5 = five5.replace(',', '')
+    five5 = five5.replace("'", "")
+    print(five5)
+    wl5= str(five5)
+
+
+    if countl == 5:
+        global collumcheck
+        collumcheck = 1
+        wguesse(one1)
+        collumcheck = 2
+        wguesse(two2)
+        collumcheck = 3
+        wguesse(three3)
+        collumcheck = 4
+        wguesse(four4)
+        collumcheck = 5
+        wguesse(five5)
+        
+        ent()
+    else:
+        errorlable = Label(root, text=button_word + " is not 5 letters", )
+        errorlable.place(x= 500, y=10)
+    
+
+
+wentry = Entry(root, width = 25)
+wbutton = Button(root, width=15, height = 2, text="Enter Word(5 Letters)", command= butset)
+
+wentry.place(x=500, y=100)
+wbutton.place(x=660, y=90)
+
+
 root.mainloop()
