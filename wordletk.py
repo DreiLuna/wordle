@@ -126,7 +126,6 @@ wl5= str(five)
 #!one file pogint
 
 def color_check(flet1, flet2, flet3, flet4, flet5, flabl1, flabl2, flabl3, flabl4, flabl5):
-    print("got to the spot")
     if flet1 == wl1:
         flabl1.configure(bg = "#30ab51")
     elif flet1 == wl2 or let1_1 == wl3 or let1_1 == wl4 or let1_1 == wl5:
@@ -549,7 +548,7 @@ def ent():
         changerow = changerow + 1
         print (changerow)
         collumcheck = 0
-    else:
+    elif my_word not in word_list:
         errorlable = Label(root, text=my_word + " is not a word. Please clear and try again.", )
         errorlable.place(x= 500, y=10)
         '''
