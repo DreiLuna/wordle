@@ -128,27 +128,27 @@ wl5= str(five)
 def color_check(flet1, flet2, flet3, flet4, flet5, flabl1, flabl2, flabl3, flabl4, flabl5):
     if flet1 == wl1:
         flabl1.configure(bg = "#30ab51")
-    elif flet1 == wl2 or let1_1 == wl3 or let1_1 == wl4 or let1_1 == wl5:
+    elif flet1 == wl2 or flet1 == wl3 or flet1 == wl4 or flet1 == wl5:
         flabl1.configure(bg = "#ede96d")
 
     if flet2 == wl2:
         flabl2.configure(bg = "#30ab51")
-    elif flet2 == wl1 or let1_2 == wl3 or let1_2 == wl4 or let1_2 == wl5:
+    elif flet2 == wl1 or flet2 == wl3 or flet2 == wl4 or flet2 == wl5:
         flabl2.configure(bg = "#ede96d")
 
     if flet3 == wl3:
         flabl3.configure(bg = "#30ab51")
-    elif flet3 == wl1 or let1_3 == wl2 or let1_3 == wl4 or let1_3 == wl5:
+    elif flet3 == wl1 or flet3 == wl2 or flet3 == wl4 or flet3 == wl5:
         flabl3.configure(bg = "#ede96d")
 
     if flet4 == wl4:
         flabl4.configure(bg = "#30ab51")
-    elif flet4 == wl1 or let1_4 == wl2 or let1_4 == wl3 or let1_4 == wl5:
+    elif flet4 == wl1 or flet4 == wl2 or flet4 == wl3 or flet4 == wl5:
         flabl4.configure(bg = "#ede96d")
 
     if flet5 == wl5:
         flabl5.configure(bg = "#30ab51")
-    elif flet5 == wl1 or let1_5 == wl2 or let1_5 == wl3 or let1_5 == wl4:
+    elif flet5 == wl1 or flet5 == wl2 or flet5 == wl3 or flet5 == wl4:
         flabl5.configure(bg = "#ede96d")
     
 def wguesse(letterpressed):
@@ -178,6 +178,8 @@ def wguesse(letterpressed):
             global my_word
             my_word = str(let1_1) + str(let1_2) + str(let1_3) + str(let1_4) + str(let1_5)
         elif collumcheck == 7:
+            print(correct_word)
+            print(let1_1, let1_2, let1_3, let1_4, let1_5)
             color_check(let1_1, let1_2, let1_3, let1_4, let1_5, l1_1, l1_2, l1_3, l1_4, l1_5)
 
 
@@ -210,6 +212,8 @@ def wguesse(letterpressed):
             
             my_word = str(let2_1) + str(let2_2) + str(let2_3) + str(let2_4) + str(let2_5)
         elif collumcheck == 7:
+            print(correct_word)
+            print(let2_1, let2_2, let2_3, let2_4, let2_5)
             color_check(let2_1, let2_2, let2_3, let2_4, let2_5, l2_1, l2_2, l2_3, l2_4, l2_5)
 
 
@@ -242,6 +246,8 @@ def wguesse(letterpressed):
             
             my_word = str(let3_1) + str(let3_2) + str(let3_3) + str(let3_4) + str(let3_5)
         elif collumcheck == 7:
+            print(correct_word)
+            print(let3_1, let3_2, let3_3, let3_4, let3_5)
             color_check(let3_1, let3_2, let3_3, let3_4, let3_5, l3_1, l3_2, l3_3, l3_4, l3_5)
 
 
@@ -971,6 +977,7 @@ l6_5.pack()
 #! frigin entrys
 
 def butset():
+    global button_word
     button_word = wentry.get()
     print(button_word)
     countl = len(button_word)
@@ -1029,7 +1036,7 @@ def butset():
         
         ent()
     else:
-        errorlable = Label(root, text=button_word + " is not 5 letters", )
+        errorlable = Label(root, text=str(button_word) + " is not 5 letters", )
         errorlable.place(x= 500, y=10)
     
 
